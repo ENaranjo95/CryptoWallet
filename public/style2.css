@@ -1,0 +1,65 @@
+*{
+  box-sizing: border-box;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+body{
+  background-image: url(img/block.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 710px;
+  font-size: 20px;
+  margin: 0;
+  color: orange;
+  text-align: center;
+}
+.container{
+  width: 80%;
+  padding: 5% 5% 0 5%;
+  margin: 0 auto;
+}
+.login{
+  padding: 5% 0 5% 0;
+}
+.login h1{
+  font-size: 2.5rem;
+}
+.login p{
+  font-size: 1.8rem;
+}
+.login a{
+  padding: 5px 1% 5px 1%;
+  font-size: 1.5rem;
+  color: white;
+  background-color: orange;
+  border: 1px solid white;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+.login a span{
+  color: black;
+  margin: 0 5px 0 5px;
+}
+.img{
+  height: 90px;
+  width: 15%;
+  margin: 5% 1.5% 5% 1.5%;
+  display: inline-block;
+}
+.left{
+  margin-right: 10%;
+}
+.img img{
+  height: inherit;
+  width: 100%;
+}
+.fix{
+  background: transparent;
+}

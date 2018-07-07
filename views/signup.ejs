@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Crypto Wallet Exchange</title>
+  <link rel="icon" href="bitcoin.png">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style4.css">
+</head>
+
+<body>
+  <section class="container clearfix">
+    <section class="signUp">
+
+      <h1><span class="fa fa-sign-in"></span> Signup</h1>
+
+      <% if (message.length > 0) { %>
+        <section class="alert alert-danger">
+          <%= message %>
+        </section>
+        <% } %>
+
+          <!-- LOGIN FORM -->
+          <form action="/signup" method="post">
+            <section class="form">
+              <label id="email">Email</label>
+              <input type="text" class="formInput" name="email">
+            </section>
+            <section class="form">
+              <label>Password</label>
+              <input type="password" class="formInput" name="password">
+            </section>
+            <button type="submit" class="btn btn-warning btn-lg">Signup</button>
+          </form>
+
+          <p>Already have an account? <a href="/login">Login</a></p>
+          <p>Or go <a href="/">home</a>.</p>
+
+    </section>
+  </section>
+</body>
+
+</html>

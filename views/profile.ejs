@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Crypto Wallet Exchange</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="bitcoin.png">
+</head>
+
+<body id="profile">
+  <header>
+    <section>
+      <% if (user.local.email) { %>
+        <p>
+          <strong>id</strong>:
+          <%= user._id %><br>
+            <strong>email</strong>:
+            <%= user.local.email %><br>
+        </p>
+    </section>
+
+    <section class="links">
+      <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+      <a href="/unlink/local" class="btn btn-default">Unlink</a>
+      <% } %>
+    </section>
+
+  </header>
+
+  <section class="left">
+    <h2 id="buyCoins">Purchase Coins</h2>
+    <% if (user.local.email) { %>
+    <form class="input" >
+      <input id="cash" placeholder="Currency">
+      <select id="currency">
+        <option>Select a Currency</option>
+        <option value="AUD">Australian Dollar</option>
+        <option value="BRL">Brazilian Real</option>
+        <option value="CAD">Canadian</option>
+        <option value="CHF">Swiss Franc</option>
+        <option value="CLP">Chilean Peso</option>
+        <option value="CNY">Chinese Yuan</option>
+        <option value="DKK">Danish Krone</option>
+        <option value="EUR">Euro Dollar</option>
+        <option value="HKD">Hong Kong Dollar</option>
+        <option value="INR">Indian Rupee</option>
+        <option value="ISK">Icelandic Krona</option>
+        <option value="JPY">Japanese Yen</option>
+        <option value="KRW">South Korean Won</option>
+        <option value="NZD">New Zealand Dollar</option>
+        <option value="PLN">Poland zloty</option>
+        <option value="RUB">Russian Ruble</option>
+        <option value="SEK">Swedish Krona</option>
+        <option value="SGD">Singapore Dollar</option>
+        <option value="THB">Thai Baht</option>
+        <option value="TWD">Taiwan New Dollar</option>
+        <option value="USD">United States Dollar</option>
+      </select>
+      <select id="coin">
+        <option>Select a Currency</option>
+        <option value="1">Bitcoin</option>
+        <option value="2">Litcoin</option>
+        <option value="52">Ripple</option>
+        <option value="66">Nxt</option>
+        <option value="74">Dogecoin</option>
+        <option value="109">DigiByte</option>
+        <option value="118">ReddCoin</option>
+        <option value="131">Dash</option>
+        <option value="213">MonaCoin</option>
+        <option value="291">MaidSafeCoin</option>
+        <option value="328">Monero</option>
+        <option value="372">Bytecoin</option>
+        <option value="463">BitShares</option>
+        <option value="512">Stellar</option>
+        <option value="541">Syscoin</option>
+        <option value="558">Emercoin</option>
+        <option value="693">Verge</option>
+        <option value="825">Tether</option>
+        <option value="873">NEM</option>
+        <option value="1027">Ethereum</option>
+        <option value="1042">Siacoin</option>
+        <option value="1087">Factom</option>
+        <option value="1104">Augur</option>
+        <option value="1168">Decred</option>
+        <option value="1169">PIVX</option>
+        <option value="1214">Lisk</option>
+        <option value="1229">DigixDAO</option>
+        <option value="1230">Steem</option>
+        <option value="1274">Waves</option>
+        <option value="1320">Ardor</option>
+        <option value="1321">Ethereum Classic</option>
+        <option value="1343">Stratis</option>
+        <option value="1376">NEO</option>
+        <option value="1437">Zcash</option>
+        <option value="1455">Golem</option>
+        <option value="1518">Maker</option>
+        <option value="1521">Komodo</option>
+        <option value="1567">Nano</option>
+        <option value="1586">Ark</option>
+        <option value="1684">Qtum</option>
+        <option value="1697">Basic Attention Token</option>
+        <option value="1700">Aeternity</option>
+        <option value="1710">IOTA</option>
+        <option value="1720">Bancor</option>
+        <option value="1727">GXChain</option>
+        <option value="1750">FunFair</option>
+        <option value="1757">Status</option>
+      </select>
+      <button id="buy">Buy</button>
+    </form>
+    <% } %>
+    <section class="image">
+      <a href="https://www.linkedin.com/in/enaranjo1295/"><img src="img/myQRCode.png" alt="QR Code"></a>
+    </section>
+  </section>
+
+  <section class="right">
+    <h3>Wallet</h3>
+    <section class="fixed">
+      <h4 id="name">Coin</h4>
+      <h4>Symbol</h4>
+      <h4>Value</h4>
+      <h4 id="icon">Sell</h4>
+    </section>
+    <ul class="wallet">
+      <% for(var i=0; i<myWallet.length; i++) {%>
+        <li class="row">
+          <span><%= myWallet[i].name %></span>
+          <span><%= myWallet[i].symbol %></span>
+          <span id="value"><%= myWallet[i].total %></span>
+          <span><i class="fas fa-dollar-sign"></i></span>
+        </li>
+        <% } %>
+    </ul>
+  </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+*{
+  box-sizing: border-box;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+body{
+  background-image: url(img/block.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 710px;
+  margin: 0;
+  color: orange;
+  font-size: 20px;
+  text-align: center;
+}
+.container{
+  padding: 5% 5% 5% 5%;
+}
+.signUp h1{
+  font-size: 2.5rem;
+}
+form{
+  width: 30%;
+  margin: 0 auto;
+}
+.form{
+  margin: 1% 0 3% 0;
+  font-size: 1.5rem;
+  text-align: left;
+}
+#email{
+  margin-right: 35px;
+}
+.formInput{
+  width: 200px;
+  margin-left: 15px;
+}
+.btn{
+  font-size: 1.5rem;
+  height: 40px;
+  padding: 0 5% 0 5%;
+  border-radius: 20px;
+  background-color: orange;
+}
+.signUp p a{
+  color: white;
+  text-decoration: none;
+}
