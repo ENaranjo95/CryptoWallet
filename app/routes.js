@@ -27,12 +27,19 @@ module.exports = function(app, passport, db) {
 // message board routes ===============================================================
 
     app.post('/wallet', (req, res) => {
-      db.collection('myWallet').save({name: req.body.name, symbol: req.body.symbol, total: req.body.total}, (err, result) => {
-        if (err) return console.log(err)
-        console.log('saved to database')
-        res.redirect('/profile')
-      })
+    db.collection('myWallet')
+    .findOneAndUpdate({name: req.body.name, symbol: req.body.symbol }, {
+      $inc: {
+        total: + req.body.total
+      }
+    }, {
+      sort: {_id: -1},
+      upsert: true
+    }, (err, result) => {
+      if (err) return res.send(err)
+      res.send(result)
     })
+  })
 
     app.delete('/wallet', (req, res) => {
       db.collection('myWallet').findOneAndDelete({name: req.body.name, symbol: req.body.symbol}, (err, result) => {
